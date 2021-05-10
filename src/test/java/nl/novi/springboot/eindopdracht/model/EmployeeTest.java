@@ -1,4 +1,4 @@
-package model;
+package nl.novi.springboot.eindopdracht.model;
 
 import org.junit.jupiter.api.Test;
 
