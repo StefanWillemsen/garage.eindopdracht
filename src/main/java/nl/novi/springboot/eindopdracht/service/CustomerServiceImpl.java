@@ -18,7 +18,7 @@ import java.util.List;
         public List<Customer> getAllCustomers() { return CustomerRepository.findAll();}
 
         @Override
-        public List<Customer> getCustomerByName(String name) {
+        public List<Customer> getCustomersByName(String name) {
             if (name == null || name.isEmpty())
                 return CustomerRepository.findAll();
             else
