@@ -29,8 +29,7 @@ public class Customer {
     @Id
     private Long customerID;
 
-    public Customer() {
-    }
+
 
     public Customer(String firstName, String lastName, String phoneNumber, String role, String email, Long customerID) {
         this.firstName = firstName;
@@ -39,6 +38,8 @@ public class Customer {
         this.role = role;
         this.email = email;
         this.customerID = customerID;
+    }
+    public Customer() {
     }
 
     public String getFirstName() {
@@ -55,6 +56,10 @@ public class Customer {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFullName() {
+        return this.getFirstName() + " " + this.getLastName();
     }
 
     public String getPhoneNumber() {

@@ -19,7 +19,7 @@ public class CustomerController {
 
     @GetMapping(value = "/Customers/{id}")
     public ResponseEntity<Object> getCustomer(@PathVariable("id") Integer id) {
-        return  new ResponseEntity<>(CustomerService.getCustomerById(id), HttpStatus.OK);
+        return  new ResponseEntity<>(customerService.getCustomerById(id), HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/Customers/{id}")

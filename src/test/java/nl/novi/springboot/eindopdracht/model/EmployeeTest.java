@@ -1,56 +1,43 @@
 package nl.novi.springboot.eindopdracht.model;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeTest {
 
-    @Test
-    void getEmployeeID() {
+        private Employee employee;
+    @BeforeEach
+    void setUp(){
+        this.employee = new Employee();
+        this.employee.setFirstName("Timo");
+        this.employee.setLastName("Tester");
+        this.employee.setRole("mechanic");
+        this.employee.setPhoneNumber("1234567890");
+        this.employee.setEmail("TimoTester@email.com");
     }
 
-    @Test
-    void setEmployeeID() {
-    }
-
-    @Test
-    void getFirstName() {
-    }
-
-    @Test
-    void setFirstName() {
-    }
 
     @Test
     void getLastName() {
-    }
-
-    @Test
-    void setLastName() {
-    }
-
-    @Test
-    void getPhoneNumber() {
-    }
-
-    @Test
-    void setPhoneNumber() {
+        String expectedLastName = "Tester";
+        String actualLastName = this.employee.getLastName();
+        assertEquals(expectedLastName, actualLastName);
     }
 
     @Test
     void getRole() {
-    }
-
-    @Test
-    void setRole() {
+        String expectedRole = "mechanic";
+        String actualRole = this.employee.getRole();
+        assertEquals(expectedRole, actualRole);
     }
 
     @Test
     void getEmail() {
+        String expectedEmail = "TimoTester@email.com";
+        String actualEmail = this.employee.getEmail();
+        assertEquals(expectedEmail, actualEmail);
     }
 
-    @Test
-    void setEmail() {
-    }
 }
