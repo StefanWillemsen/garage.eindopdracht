@@ -18,7 +18,6 @@ public class Car {
     @JoinColumn (name= "employee_id")
     private Employee employee;
 
-
     @Column
     private String brand;
 

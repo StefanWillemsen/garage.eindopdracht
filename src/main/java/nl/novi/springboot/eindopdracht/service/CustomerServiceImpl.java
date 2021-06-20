@@ -12,23 +12,23 @@ import java.util.List;
 
     public class CustomerServiceImpl implements CustomerService {
         @Autowired
-        nl.novi.springboot.eindopdracht.repository.CustomerRepository CustomerRepository ;
+        CustomerRepository customerRepository ;
 
         @Override
-        public List<Customer> getAllCustomers() { return CustomerRepository.findAll();}
+        public List<Customer> getAllCustomers() { return customerRepository.findAll();}
 
         @Override
         public List<Customer> getCustomersByName(String name) {
             if (name == null || name.isEmpty())
-                return CustomerRepository.findAll();
+                return customerRepository.findAll();
             else
-                return CustomerRepository.findByLastNameStartingWithOrderByLastName(name);
+                return customerRepository.findByLastNameStartingWithOrderByLastName(name);
         }
 
         @Override
         public Customer getCustomerById(long id) {
-            if (CustomerRepository.existsById(id)) {
-                return CustomerRepository.findById(id).get();
+            if (customerRepository.existsById(id)) {
+                return customerRepository.findById(id).get();
             }
             else {
                 throw new RecordNotFoundException();
@@ -37,14 +37,14 @@ import java.util.List;
 
         @Override
         public long addCustomer(Customer customer) {
-            Customer newCustomer = CustomerRepository.save(customer);
+            Customer newCustomer = customerRepository.save(customer);
             return newCustomer.getCustomerID();
         }
 
         @Override
         public void deleteCustomer(long id) {
-            if( CustomerRepository.existsById(id)){
-                CustomerRepository.deleteById(id);
+            if( customerRepository.existsById(id)){
+                customerRepository.deleteById(id);
             }
             else {
                 throw new RecordNotFoundException();
@@ -54,8 +54,8 @@ import java.util.List;
 
         @Override
         public void updateCustomer(long id, Customer customer) {
-            if (CustomerRepository.existsById(id)){
-                Customer existingCustomer = CustomerRepository.findById(id).get();
+            if (customerRepository.existsById(id)){
+                Customer existingCustomer = customerRepository.findById(id).get();
                 existingCustomer.setFirstName(customer.getFirstName());
                 existingCustomer.setLastName(customer.getLastName());
                 existingCustomer.setRole(customer.getRole());

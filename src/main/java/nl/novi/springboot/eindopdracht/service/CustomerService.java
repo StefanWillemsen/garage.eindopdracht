@@ -2,7 +2,6 @@ package nl.novi.springboot.eindopdracht.service;
 
 
 import nl.novi.springboot.eindopdracht.model.Customer;
-import nl.novi.springboot.eindopdracht.model.Employee;
 
 import java.util.List;
 
