@@ -5,10 +5,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import java.io.Serializable;
 
 @Entity
 @IdClass(AuthorityKey.class)
-public class Authority {
+public class Authority implements Serializable {
     @Id
     @Column(nullable = false)
     private String userName;

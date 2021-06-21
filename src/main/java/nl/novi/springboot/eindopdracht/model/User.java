@@ -68,5 +68,5 @@ public class User {
     public void addAuthorities(Authority appAuthority) {
         this.authorities.add(appAuthority);
     }
-    public void DeleteAuthority(Authority appAuthority){this.authorities.remove(appAuthority);}
+    public void deleteAuthority(Authority appAuthority){this.authorities.remove(appAuthority);}
 }
