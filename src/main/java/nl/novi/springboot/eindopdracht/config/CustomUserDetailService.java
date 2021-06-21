@@ -26,10 +26,10 @@ public class CustomUserDetailService implements UserDetailsService {
 
 
     @Override
-    public UserDetails loadUserByUsername(String userName) {
-            Optional<nl.novi.springboot.eindopdracht.model.User> user = userService.getUserByName(userName);
-            if (user == null){
-                throw new RecordNotFoundException();
+    public UserDetails loadUserByUsername(String username) {
+            Optional<nl.novi.springboot.eindopdracht.model.User> user = userService.getUserByName(username);
+            if (user.isEmpty()){
+                throw new UsernameNotFoundException("username not found");
             }
                 String password = user.get().getPassword();
                 Set<Authority> authorities = user.get().getAuthorities();
@@ -38,6 +38,6 @@ public class CustomUserDetailService implements UserDetailsService {
                     grantedAuthorities.add(new SimpleGrantedAuthority(authority.getAuthorityLevel()));
                 }
 
-                return new User(userName, password, grantedAuthorities);
+                return new User(username, password, grantedAuthorities);
     }
 }
