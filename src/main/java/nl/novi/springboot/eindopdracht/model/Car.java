@@ -22,7 +22,6 @@ public class Car {
     @Column
     private String brand;
 
-
     @Column
     private String type;
 

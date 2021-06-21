@@ -24,7 +24,7 @@ public class Part {
 
     public Part(long partId, String name, String description, double price) {
         this.partID = partId;
-        name = name;
+        this.name = name;
         this.description = description;
         this.price = price;
     }
@@ -43,7 +43,7 @@ public class Part {
     }
 
     public void setName(String name) {
-        name = name;
+        this.name = name;
     }
 
     public String getDescription() {
