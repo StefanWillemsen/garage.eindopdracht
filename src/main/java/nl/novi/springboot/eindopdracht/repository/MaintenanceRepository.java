@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface MaintenanceRepository extends JpaRepository <Maintenance, Long>{
 
-    List<Maintenance> findMaintenanceByDate(String maintenanceDate);
+    List<Maintenance> findMaintenanceByMaintenanceDate(String maintenanceDate);
 
 }
 

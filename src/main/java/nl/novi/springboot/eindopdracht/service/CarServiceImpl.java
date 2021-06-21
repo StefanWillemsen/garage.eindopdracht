@@ -5,9 +5,11 @@ import nl.novi.springboot.eindopdracht.model.Car;
 import nl.novi.springboot.eindopdracht.model.Customer;
 import nl.novi.springboot.eindopdracht.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.Id;
 
+@Service
 public class CarServiceImpl implements CarService{
     @Autowired
     CarRepository carRepository;

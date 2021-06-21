@@ -11,7 +11,7 @@ public class Part {
     private long partID;
 
     @Column
-    private String Name;
+    private String name;
 
     @Column
     private String description;
@@ -24,7 +24,7 @@ public class Part {
 
     public Part(long partId, String name, String description, double price) {
         this.partID = partId;
-        Name = name;
+        name = name;
         this.description = description;
         this.price = price;
     }
@@ -39,11 +39,11 @@ public class Part {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        name = name;
     }
 
     public String getDescription() {

@@ -19,7 +19,7 @@ public class MaintenanceServiceImpl implements MaintenanceService{
         if(MaintenanceDate== null || MaintenanceDate.isEmpty()) {
             return maintenanceRepository.findAll();
         }else{
-            return maintenanceRepository.findMaintenanceByDate(MaintenanceDate);
+            return maintenanceRepository.findMaintenanceByMaintenanceDate(MaintenanceDate);
         }
     }
 
