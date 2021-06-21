@@ -56,7 +56,7 @@ public class Maintenance {
         MaintenanceID = maintenanceID;
     }
 
-       public Car getCar() {
+    public Car getCar() {
         return car;
     }
 
@@ -94,5 +94,21 @@ public class Maintenance {
 
     public void setFirstCheckDone(boolean firstCheckDone) {
         this.firstCheckDone = firstCheckDone;
+    }
+
+    public Service getService() {
+        return service;
+    }
+
+    public void setService(Service service) {
+        this.service = service;
+    }
+
+    public Part getPart() {
+        return part;
+    }
+
+    public void setPart(Part part) {
+        this.part = part;
     }
 }
