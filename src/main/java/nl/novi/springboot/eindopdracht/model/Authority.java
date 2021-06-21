@@ -1,14 +1,12 @@
 package nl.novi.springboot.eindopdracht.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @IdClass(AuthorityKey.class)
+@Table(name = "authorities")
 public class Authority implements Serializable {
     @Id
     @Column(nullable = false)

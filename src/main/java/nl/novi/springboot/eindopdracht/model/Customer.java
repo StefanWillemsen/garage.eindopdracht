@@ -10,8 +10,6 @@ import javax.persistence.Table;
 public class Customer {
 
 
-
-
     @Column(length = 80)
     private String firstName;
 
@@ -20,9 +18,6 @@ public class Customer {
 
     @Column
     private String phoneNumber;
-
-    @Column
-    private String role;
 
     @Column
     private String email;
@@ -35,7 +30,7 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
-        this.role = role;
+
         this.email = email;
         this.customerID = customerID;
     }
@@ -70,15 +65,7 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getEmail() {
+        public String getEmail() {
         return email;
     }
 

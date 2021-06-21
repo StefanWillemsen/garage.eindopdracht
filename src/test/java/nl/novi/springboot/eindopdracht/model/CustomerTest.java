@@ -15,8 +15,7 @@ class CustomerTest {
         this.customer = new Customer();
         this.customer.setFirstName("Tessa");
         this.customer.setLastName("Test");
-        this.customer.setRole("customer");
-        this.customer.setPhoneNumber("0123456789");
+                this.customer.setPhoneNumber("0123456789");
         }
     @Test
     void getFirstName() {

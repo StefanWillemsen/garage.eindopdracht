@@ -59,8 +59,7 @@ import java.util.List;
                 Customer existingCustomer = customerRepository.findById(id).get();
                 existingCustomer.setFirstName(customer.getFirstName());
                 existingCustomer.setLastName(customer.getLastName());
-                existingCustomer.setRole(customer.getRole());
-                existingCustomer.setEmail(customer.getEmail());
+                                existingCustomer.setEmail(customer.getEmail());
                 existingCustomer.setPhoneNumber(customer.getEmail());
             }
             else{
