@@ -3,6 +3,7 @@ package nl.novi.springboot.eindopdracht.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Car")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
