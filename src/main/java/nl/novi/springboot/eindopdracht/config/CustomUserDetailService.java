@@ -1,7 +1,6 @@
 package nl.novi.springboot.eindopdracht.config;
 
 
-import nl.novi.springboot.eindopdracht.exception.RecordNotFoundException;
 import nl.novi.springboot.eindopdracht.model.Authority;
 import nl.novi.springboot.eindopdracht.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ public class CustomUserDetailService implements UserDetailsService {
                 Set<Authority> authorities = user.get().getAuthorities();
                 List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
                 for (Authority authority : authorities){
-                    grantedAuthorities.add(new SimpleGrantedAuthority(authority.getAuthorityLevel()));
+                    grantedAuthorities.add(new SimpleGrantedAuthority(authority.getAuthority()));
                 }
 
                 return new User(username, password, grantedAuthorities);

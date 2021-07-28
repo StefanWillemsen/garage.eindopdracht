@@ -6,37 +6,38 @@ import java.io.Serializable;
 
 @Entity
 @IdClass(AuthorityKey.class)
-@Table(name = "authorities")
+@Table(name = "Authorities")
 public class Authority implements Serializable {
-    @Id
-    @Column(nullable = false)
-    private String userName;
 
     @Id
     @Column(nullable = false)
-    private String authorityLevel;
+    private String username;
+
+    @Id
+    @Column(nullable = false)
+    private String authority;
 
     public Authority() {
     }
 
-    public Authority(String userName, String authorityLevel) {
-        this.userName = userName;
-        this.authorityLevel = authorityLevel;
+    public Authority(String username, String authority) {
+        this.username = username;
+        this.authority = authority;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getAuthorityLevel() {
-        return authorityLevel;
+    public String getAuthority() {
+        return authority;
     }
 
-    public void setAuthorityLevel(String authorityLevel) {
-        this.authorityLevel = authorityLevel;
+    public void setAuthority(String authority) {
+        this.authority = authority;
     }
 }

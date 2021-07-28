@@ -28,13 +28,13 @@ public class CustomerController {
         return new ResponseEntity<>("record deleted", HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping(value = "/Customer/{id}")
+    @PutMapping(value = "/Customers/{id}")
     public ResponseEntity<Object> updateCustomer(@PathVariable("id") Integer id, @RequestBody Customer customer){
         customerService.updateCustomer(id, customer);
         return new ResponseEntity<>("Record Updated", HttpStatus.NO_CONTENT);
     }
 
-    @PostMapping( value = "/customer")
+    @PostMapping( value = "/Customers")
     public ResponseEntity<Object> addCustomer(@RequestBody Customer customer){
         long newId = customerService.addCustomer(customer);
 

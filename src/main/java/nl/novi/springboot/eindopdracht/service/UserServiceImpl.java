@@ -4,7 +4,6 @@ import nl.novi.springboot.eindopdracht.exception.RecordNotFoundException;
 import nl.novi.springboot.eindopdracht.model.Authority;
 import nl.novi.springboot.eindopdracht.model.User;
 import nl.novi.springboot.eindopdracht.repository.UserRepository;
-import nl.novi.springboot.eindopdracht.repository.UserRepository;
 import nl.novi.springboot.eindopdracht.util.RandomStringGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,7 +32,7 @@ public class UserServiceImpl implements UserService{
         String randomString = RandomStringGenerator.generateRandomString(20);
         user.setApiKey(randomString);
         User newUser = userRepository.save(user);
-        return newUser.getUserName();
+        return newUser.getUsername();
     }
 
     @Override
@@ -79,7 +78,7 @@ public class UserServiceImpl implements UserService{
             User user = userRepository.findById(userName).get();
             Authority authorityToDelete = user.getAuthorities()
                                                 .stream()
-                                                .filter((a) -> a.getAuthorityLevel()
+                                                .filter((a) -> a.getAuthority()
                                                                 .equalsIgnoreCase(authority))
                                                 .findAny()
                                                 .get();

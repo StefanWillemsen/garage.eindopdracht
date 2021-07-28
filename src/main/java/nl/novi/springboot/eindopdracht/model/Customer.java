@@ -9,7 +9,6 @@ import javax.persistence.Table;
 @Table(name = "Customers")
 public class Customer {
 
-
     @Column(length = 80)
     private String firstName;
 

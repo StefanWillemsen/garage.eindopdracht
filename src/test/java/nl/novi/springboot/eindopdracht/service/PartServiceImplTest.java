@@ -4,29 +4,29 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class EmployeeServiceTest {
+class PartServiceImplTest {
 
     @Test
-    void getAllEmployees() {
+    void getAllParts() {
     }
 
     @Test
-    void getEmployeeByName() {
+    void getPartsByName() {
     }
 
     @Test
-    void getEmployeeById() {
+    void getPartById() {
     }
 
     @Test
-    void addEmployee() {
+    void addPart() {
     }
 
     @Test
-    void deleteEmployee() {
+    void deletePart() {
     }
 
     @Test
-    void updateEmployee() {
+    void updatePart() {
     }
 }

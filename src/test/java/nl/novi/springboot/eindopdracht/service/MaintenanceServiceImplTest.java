@@ -4,29 +4,25 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CustomerServiceTest {
+class MaintenanceServiceImplTest {
 
     @Test
-    void getAllCustomers() {
+    void getMaintenancebyDate() {
     }
 
     @Test
-    void getCustomersByName() {
+    void getMaintenanceById() {
     }
 
     @Test
-    void getCustomerById() {
+    void addMaintenance() {
     }
 
     @Test
-    void addCustomer() {
+    void deleteMaintenance() {
     }
 
     @Test
-    void deleteCustomer() {
-    }
-
-    @Test
-    void updateCustomer() {
+    void updateMaintenance() {
     }
 }
