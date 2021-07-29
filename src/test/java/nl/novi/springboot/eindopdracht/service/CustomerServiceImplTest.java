@@ -48,10 +48,6 @@ class CustomerServiceImplTest {
     public void setUp(){}
 
     @Test
-    void getAllCustomers() {
-    }
-
-    @Test
     void testGetCustomersByName() {
         customer = new Customer("Albert", "Einstein", "123456789", "Albert.Einstein@email.com", 1L);
 

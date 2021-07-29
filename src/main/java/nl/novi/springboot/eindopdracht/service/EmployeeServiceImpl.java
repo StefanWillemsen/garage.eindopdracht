@@ -64,6 +64,10 @@ public class EmployeeServiceImpl implements EmployeeService{
             throw new RecordNotFoundException();
         }
     }
+    @Override
+    public Employee getEmployeeByLastName(String name) {
+        return employeeRepository.findByLastName(name);
+    }
 
 
 

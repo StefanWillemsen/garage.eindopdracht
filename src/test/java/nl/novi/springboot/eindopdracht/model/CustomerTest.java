@@ -31,8 +31,6 @@ class CustomerTest {
             assertEquals(expectedLastName, actualLastName);
     }
 
-
-
     @Test
     void getPhoneNumber() {
         String expectedPhoneNumber = "0123456789";
@@ -40,31 +38,5 @@ class CustomerTest {
         assertEquals(expectedPhoneNumber, actualPhoneNumber);
     }
 
-    @Test
-    void setPhoneNumber() {
-    }
 
-    @Test
-    void getRole() {
-    }
-
-    @Test
-    void setRole() {
-    }
-
-    @Test
-    void getEmail() {
-    }
-
-    @Test
-    void setEmail() {
-    }
-
-    @Test
-    void setCustomerID() {
-    }
-
-    @Test
-    void getCustomerID() {
-    }
 }
