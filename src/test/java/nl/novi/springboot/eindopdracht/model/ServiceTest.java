@@ -1,48 +1,32 @@
 package nl.novi.springboot.eindopdracht.model;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ServiceTest {
 
-    @Test
-    void getServiceID() {
-    }
+    private Service service;
 
-    @Test
-    void setServiceID() {
+    @BeforeEach
+    void setUp(){
+        this.service = new Service();
+        this.service.setAction("changing v-belt");
+        this.service.setDescription("price to change the v-belt");
+
     }
 
     @Test
     void getAction() {
+        assertEquals("changing v-belt", this.service.getAction());
     }
 
-    @Test
-    void setAction() {
-    }
 
     @Test
     void getDescription() {
+        assertEquals("price to change the v-belt", this.service.getDescription());
     }
 
-    @Test
-    void setDescription() {
-    }
-
-    @Test
-    void getPrice() {
-    }
-
-    @Test
-    void setPrice() {
-    }
-
-    @Test
-    void getMaintenances() {
-    }
-
-    @Test
-    void setMaintenances() {
-    }
 }
