@@ -1,5 +1,7 @@
 package nl.novi.springboot.eindopdracht.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,16 +13,19 @@ public class Maintenance {
     @ManyToOne
     @MapsId("serviceID")
     @JoinColumn (name = "servicesApplied")
+    @JsonIgnoreProperties("Maintenance")
     private Service service;
 
     @ManyToOne
     @MapsId("partID")
     @JoinColumn(name = "partsExchanged")
+    @JsonIgnoreProperties("Maintenance")
     private Part part;
 
     @OneToOne
     @MapsId("carID")
     @JoinColumn (name = "Car")
+    @JsonIgnoreProperties("Maintenance")
     private Car car;
 
     @Column
@@ -111,4 +116,5 @@ public class Maintenance {
     public void setPart(Part part) {
         this.part = part;
     }
+
 }

@@ -1,7 +1,6 @@
 package nl.novi.springboot.eindopdracht.controller;
 
 
-import nl.novi.springboot.eindopdracht.model.Customer;
 import nl.novi.springboot.eindopdracht.model.Maintenance;
 import nl.novi.springboot.eindopdracht.service.MaintenanceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,18 +21,22 @@ public class MaintenanceController {
     @Autowired
     MaintenanceService maintenanceService;
 
+    @GetMapping(value = "/Maintenance")
+    public ResponseEntity<Object> getMaintenance(@RequestParam(required = false) String MaintenanceDate){
+        return new ResponseEntity<>(maintenanceService.getMaintenancebyDate(MaintenanceDate), HttpStatus.OK);
+    }
     @GetMapping(value = "/Maintenance/{id}")
     public ResponseEntity<Object> getMaintenance(@PathVariable("id") Integer id) {
         return  new ResponseEntity<>(maintenanceService.getMaintenanceById(id), HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/Maintenance")
+    @DeleteMapping(value = "/Maintenance/{id}")
     public ResponseEntity<Object> deleteMaintenance(@PathVariable("id") Integer id){
         maintenanceService.deleteMaintenance(id);
         return new ResponseEntity<>("Record deleted", HttpStatus.NO_CONTENT);
     }
     @PostMapping(value = "/Maintenance")
-    public ResponseEntity<Object> addEmployee(@RequestBody Maintenance maintenance){
+    public ResponseEntity<Object> addMaintenance(@RequestBody Maintenance maintenance){
         long newId = maintenanceService.addMaintenance(maintenance);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()

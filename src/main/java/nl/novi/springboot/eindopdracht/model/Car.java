@@ -1,6 +1,9 @@
 package nl.novi.springboot.eindopdracht.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Car")
@@ -31,6 +34,9 @@ public class Car {
     @Column
     private short manufacturingYear;
 
+    @OneToOne(mappedBy = "car")
+    @JsonIgnoreProperties("car")
+    List<Maintenance> maintenances;
     /* ADD SOMEHOW
     @Column
     private document carPapers;
@@ -103,5 +109,13 @@ public class Car {
 
     public void setManufacturingYear(short manufacturingYear) {
         this.manufacturingYear = manufacturingYear;
+    }
+
+    public List<Maintenance> getMaintenances() {
+        return maintenances;
+    }
+
+    public void setMaintenances(List<Maintenance> maintenances) {
+        this.maintenances = maintenances;
     }
 }

@@ -1,6 +1,10 @@
 package nl.novi.springboot.eindopdracht.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.iq80.snappy.Main;
+
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -18,6 +22,9 @@ public class Service {
 
     @Column double price;
 
+    @OneToMany(mappedBy = "service")
+    @JsonIgnoreProperties("service")
+    List<Maintenance> maintenances;
     public Service() {
     }
 
@@ -60,4 +67,11 @@ public class Service {
         this.price = price;
     }
 
+    public List<Maintenance> getMaintenances() {
+        return maintenances;
+    }
+
+    public void setMaintenances(List<Maintenance> maintenances) {
+        this.maintenances = maintenances;
+    }
 }
