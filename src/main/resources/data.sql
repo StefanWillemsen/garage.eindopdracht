@@ -25,3 +25,4 @@ INSERT INTO Employees(employeeID, first_name, last_name, phone_number, role, ema
 
 INSERT INTO Car (carID, customer_id, employee_id, brand, type, licence_plate, manufacturing_year) VALUES(10, 1, 5, 'TOYOTA', 'AIGO', 'AA-11-AA', 1999);
 
+INSERT INTO Maintenance (services_applied, parts_exchanged, car, maintenance_date, maintenance_completed,first_check_done, customer_approved ) VALUES (1, 1, 10, '02/08/2021', false, false, false);

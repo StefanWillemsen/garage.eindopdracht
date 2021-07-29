@@ -12,26 +12,27 @@ public class Maintenance {
 
     @ManyToOne
     @MapsId("serviceID")
-    @JoinColumn (name = "servicesApplied")
-    @JsonIgnoreProperties("Maintenance")
+    @JoinColumn(name = "servicesApplied")
+    @JsonIgnoreProperties("maintenances")
     private Service service;
 
     @ManyToOne
     @MapsId("partID")
     @JoinColumn(name = "partsExchanged")
-    @JsonIgnoreProperties("Maintenance")
+    @JsonIgnoreProperties("maintenances")
     private Part part;
 
-    @OneToOne
+    @ManyToOne
     @MapsId("carID")
-    @JoinColumn (name = "Car")
-    @JsonIgnoreProperties("Maintenance")
+    @JoinColumn(name = "Car")
+    @JsonIgnoreProperties("maintenances")
     private Car car;
 
     @Column
     private boolean maintenanceCompleted;
 
-    @Column boolean customerApproved;
+    @Column
+    boolean customerApproved;
 
     @Column
     private String maintenanceDate;
@@ -74,7 +75,7 @@ public class Maintenance {
     }
 
     public void setMaintenanceCompleted(boolean maintenanceCompleted) {
-        this.maintenanceCompleted = maintenanceCompleted;
+        this.maintenanceCompleted = false;
     }
 
     public boolean isCustomerApproved() {
@@ -82,7 +83,7 @@ public class Maintenance {
     }
 
     public void setCustomerApproved(boolean customerApproved) {
-        this.customerApproved = customerApproved;
+        this.customerApproved = false;
     }
 
     public String getMaintenanceDate() {
@@ -98,7 +99,7 @@ public class Maintenance {
     }
 
     public void setFirstCheckDone(boolean firstCheckDone) {
-        this.firstCheckDone = firstCheckDone;
+        this.firstCheckDone = false;
     }
 
     public Service getService() {
@@ -116,5 +117,4 @@ public class Maintenance {
     public void setPart(Part part) {
         this.part = part;
     }
-
 }

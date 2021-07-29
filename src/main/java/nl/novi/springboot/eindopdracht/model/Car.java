@@ -34,9 +34,11 @@ public class Car {
     @Column
     private short manufacturingYear;
 
-    @OneToOne(mappedBy = "car")
+    @OneToMany(mappedBy = "car")
     @JsonIgnoreProperties("car")
     List<Maintenance> maintenances;
+
+
     /* ADD SOMEHOW
     @Column
     private document carPapers;
