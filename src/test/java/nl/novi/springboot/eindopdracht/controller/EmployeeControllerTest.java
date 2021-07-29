@@ -26,7 +26,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.junit.jupiter.api.Assertions.*;
-/*
+
+//werkt niet??
 @WebMvcTest
 @ContextConfiguration(classes = {GarageApplication.class})
 class EmployeeControllerTest {
@@ -63,4 +64,4 @@ class EmployeeControllerTest {
     @Test
     void addEmployee() {
     }
-}*/
+}

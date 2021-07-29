@@ -30,7 +30,16 @@ class CarServiceImplTest {
 
     @Test
     void getCarById() {
+        //given
+        car= new Car();
+        this.car.setCarID(5L);
 
+        Mockito
+                .when(carRepository.findById(car.getCarID()))
+                .thenReturn(java.util.Optional.ofNullable(car));
+
+        Long expexted = 5L;
+        assertEquals(expexted, this.car.getCarID());
     }
 
 }
