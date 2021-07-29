@@ -1,6 +1,8 @@
 package nl.novi.springboot.eindopdracht.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.List;
@@ -15,11 +17,13 @@ public class Car {
     @ManyToOne
     @MapsId("CustomerID")
     @JoinColumn(name = "customer_id")
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Customer customer;
 
     @ManyToOne
     @MapsId("EmployeeID")
-    @JoinColumn (name= "employee_id")
+    @JoinColumn (name= "employee_id", nullable = true)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Employee employee;
 
     @Column

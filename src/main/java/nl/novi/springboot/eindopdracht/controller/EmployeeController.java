@@ -17,15 +17,15 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
-    @GetMapping(value = "/Employees")
+    @GetMapping(value = "/employees")
     public ResponseEntity<Object> getEmployees(){return ResponseEntity.ok().body(employeeService.getAllEmployees());}
 
-    @GetMapping(value = "/Employees/{id}")
+    @GetMapping(value = "/employees/{id}")
     public ResponseEntity<Object> getEmployeeById(@PathVariable("id") Integer id) {
         return  new ResponseEntity<>(employeeService.getEmployeeById(id), HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/employees")
+    @DeleteMapping(value = "/employees/{id}")
     public ResponseEntity<Object> deleteEmployee(@PathVariable("id") Integer id){
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>("Record deleted", HttpStatus.NO_CONTENT);

@@ -1,6 +1,8 @@
 package nl.novi.springboot.eindopdracht.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -10,22 +12,25 @@ public class Maintenance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long MaintenanceID;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @MapsId("serviceID")
     @JoinColumn(name = "servicesApplied")
     @JsonIgnoreProperties("maintenances")
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Service service;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @MapsId("partID")
     @JoinColumn(name = "partsExchanged")
     @JsonIgnoreProperties("maintenances")
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Part part;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @MapsId("carID")
     @JoinColumn(name = "Car")
     @JsonIgnoreProperties("maintenances")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Car car;
 
     @Column
