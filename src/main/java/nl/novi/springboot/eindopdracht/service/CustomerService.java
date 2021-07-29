@@ -12,4 +12,5 @@ public interface CustomerService {
     long addCustomer(Customer customer);
     void deleteCustomer(long id);
     void updateCustomer(long id, Customer customer);
+    Customer getCustomerByLastName(String name);
 }

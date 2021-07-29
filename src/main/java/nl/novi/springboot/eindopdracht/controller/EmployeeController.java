@@ -14,11 +14,14 @@ import java.net.URI;
 @RequestMapping("/")
 public class EmployeeController {
 
-        @Autowired
-        EmployeeService employeeService;
+    @Autowired
+    EmployeeService employeeService;
+
+    @GetMapping(value = "/Employees")
+    public ResponseEntity<Object> getEmployees(){return ResponseEntity.ok().body(employeeService.getAllEmployees());}
 
     @GetMapping(value = "/Employees/{id}")
-    public ResponseEntity<Object> getEmployee(@PathVariable("id") Integer id) {
+    public ResponseEntity<Object> getEmployeeById(@PathVariable("id") Integer id) {
         return  new ResponseEntity<>(employeeService.getEmployeeById(id), HttpStatus.OK);
     }
 

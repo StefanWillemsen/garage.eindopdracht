@@ -25,11 +25,10 @@ public class Customer {
 
 
 
-    public Customer(String firstName, String lastName, String phoneNumber, String role, String email, Long customerID) {
+    public Customer(String firstName, String lastName, String phoneNumber, String email, Long customerID) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
-
         this.email = email;
         this.customerID = customerID;
     }

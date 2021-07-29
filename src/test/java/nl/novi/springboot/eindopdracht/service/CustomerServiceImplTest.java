@@ -1,10 +1,16 @@
 package nl.novi.springboot.eindopdracht.service;
 
 import nl.novi.springboot.eindopdracht.model.Customer;
+import nl.novi.springboot.eindopdracht.model.Employee;
+import nl.novi.springboot.eindopdracht.repository.CustomerRepository;
+import nl.novi.springboot.eindopdracht.repository.EmployeeRepository;
 import org.hamcrest.Matcher;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -30,34 +36,36 @@ import static org.junit.jupiter.api.Assertions.*;
 @AutoConfigureMockMvc
 class CustomerServiceImplTest {
     @Autowired
-    private MockMvc mvc;
+    private CustomerService customerService;
 
     @MockBean
-    private CustomerService service;
+    private CustomerRepository customerRepository;
 
+    @Mock
+    Customer customer;
 
+    @BeforeEach
+    public void setUp(){}
 
     @Test
     void getAllCustomers() {
     }
 
     @Test
-    void getCustomersByName() {
+    void testGetCustomersByName() {
+        customer = new Customer("Albert", "Einstein", "123456789", "Albert.Einstein@email.com", 1L);
+
+        Mockito
+                .when(customerRepository.findByLastName(customer.getLastName()))
+                .thenReturn(customer);
+
+        String name = "Einstein";
+        String expected = "Albert Einstein";
+
+        Customer found = customerService.getCustomerByLastName(name);
+
+        assertEquals(expected, found.getFullName());
     }
 
-    @Test
-    void getCustomerById() {
-    }
 
-    @Test
-    void addCustomer() {
-    }
-
-    @Test
-    void deleteCustomer() {
-    }
-
-    @Test
-    void updateCustomer() {
-    }
 }

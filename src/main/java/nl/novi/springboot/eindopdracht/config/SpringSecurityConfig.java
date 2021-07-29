@@ -45,18 +45,18 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http
-            //HTTP Basic authentication
-            .httpBasic()
-            .and()
-            .authorizeRequests()
-                  .antMatchers("/users/**").hasRole("ADMIN")
+                //HTTP Basic authentication
+                .httpBasic()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/users/**").hasRole("ADMIN")
 //                .antMatchers(HttpMethod.GET, "/users/**").hasRole("USER") // per user authorization in UserService
-                .antMatchers(HttpMethod.GET,"/authenticated/**").authenticated()
+                .antMatchers(HttpMethod.GET, "/authenticated/**").authenticated()
 //                .anyRequest().authenticated()
                 .anyRequest().permitAll()
-            .and()
-            .csrf().disable()
-            .formLogin().disable();
+                .and()
+                .csrf().disable()
+                .formLogin().disable();
 
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }

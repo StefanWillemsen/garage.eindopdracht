@@ -67,6 +67,10 @@ import java.util.List;
             }
         }
 
+         @Override
+         public Customer getCustomerByLastName(String name) {
+        return customerRepository.findByLastName(name);
+    }
 
     }
 
